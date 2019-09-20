@@ -21,7 +21,6 @@ public class DependencyInjectionApplication {
     }
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class);
-        DependencyInjectionApplication.printBeans(context);
+        DependencyInjectionApplication.printBeans(SpringApplication.run(DependencyInjectionApplication.class));
     }
 }
