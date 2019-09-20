@@ -8,8 +8,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class DependencyInjectionApplication {
-    public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class);
+
+    private static void printBeans(ConfigurableApplicationContext context) {
         Factory factory = (Factory) context.getBean("getFactory");
         Car car = (Car) context.getBean("getCar");
 
@@ -18,5 +18,10 @@ public class DependencyInjectionApplication {
 
         //OR
         System.out.println("Car name: " + car.getName());
+    }
+
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(DependencyInjectionApplication.class);
+        DependencyInjectionApplication.printBeans(context);
     }
 }
